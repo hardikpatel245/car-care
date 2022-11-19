@@ -8,12 +8,12 @@ const sequelize = require('../config/dbConfig')
 // Define method takes two arguments
 // 1st - name of table
 // 2nd - columns inside the table
-const User = sequelize.define('user', {
+const carModel = sequelize.define('car_model_details', {
   
     // Column-1, user_id is an object with 
     // properties like type, keys, 
     // validation of column.
-    user_id:{
+    model_id:{
   
         // Sequelize module has INTEGER Data_Type.
         type:Sequelize.INTEGER,
@@ -27,30 +27,14 @@ const User = sequelize.define('user', {
         // For uniquely identify user.
         primaryKey:true
     },
-    // Car id
-    carId: { type: Sequelize.INTEGER, allowNull:false},
-
-    // Model Id
-    modelId: { type: Sequelize.INTEGER, allowNull:false},
+    
+    car_id: { type: Sequelize.INTEGER, allowNull:false },
 
     // Column-2, name
     name: { type: Sequelize.STRING, allowNull:false },
-  
-    // Column-3, email
-    email: { type: Sequelize.STRING, allowNull:false },
-
-    password: { type: Sequelize.STRING, allowNull:false },
-
-    mobile: { type: Sequelize.INTEGER, allowNull:false },
-
-    isAdmin: { type: Sequelize.ENUM, values: ['0','1'] },
-  
-    // Timestamps
-    createdAt: Sequelize.DATE,
-    updatedAt: Sequelize.DATE,
 })
   
 // Exporting User, using this constant
 // we can perform CRUD operations on
 // 'user' table.
-module.exports = User
+module.exports = carModel

@@ -12,6 +12,9 @@ auth.post('/sign-up', async function(req, res) {
             "name": data.name,
             "email": data.email,
             "password": md5(data.password),
+            "carId": data.carId,
+            "modelId": data.modelId,
+            "mobile": data.mobile,
             "isAdmin": data.isAdmin
         });
         res.status(200).send({data: insertQuery, message: "Sign up successful"});
