@@ -12,9 +12,8 @@ module.exports = validateUser = (user)=>  {
                   .required(),            
         modelId: Joi.string()
                   .required(),
-        mobile: Joi.number()
+        mobile: Joi.string()
                   .min(10)
-                  .max(10)
                   .required(),
         isAdmin: Joi.number()
                   .required(),

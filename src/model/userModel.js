@@ -41,7 +41,7 @@ const User = sequelize.define('user', {
 
     password: { type: Sequelize.STRING, allowNull:false },
 
-    mobile: { type: Sequelize.INTEGER, allowNull:false },
+    mobile: { type: Sequelize.STRING, allowNull:false },
 
     isAdmin: { type: Sequelize.ENUM, values: ['0','1'] },
   
