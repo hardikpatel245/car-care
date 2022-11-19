@@ -17,10 +17,13 @@ sequelizeCar.sync();
 sequelizeModel.sync();
 
 app.use(bodyParser.json());
-const router = require('./src/routes/user/user');
-const auth = require('./src/routes/auth/authentication');
+const router = require('./src/routes/user');
+const auth = require('./src/routes/authentication');
+const car =require('./src/routes/carDetails');
+
 app.use('/api/user', router);
 app.use('/api/auth', auth);
+app.use('/api/car', car);
 
 app.listen(process.env.PORT, function() {
     console.log("server start", process.env.PORT);

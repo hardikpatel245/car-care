@@ -1,6 +1,6 @@
 const express = require('express');
 const user = express.Router();
-const userModel = require('../../model/userModel');
+const userModel = require('../model/userModel');
 const jwt = require('jsonwebtoken');
 // const uploadFile = require('../config/uploadConfig');
 // const validateUser = require('../validation/addUserValidation');
