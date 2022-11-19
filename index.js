@@ -3,7 +3,9 @@ const app = express();
 const sequelize = require('./src/model/userModel'); 
 const bodyParser = require('body-parser');
 require('dotenv').config();
+const cors = require('cors');
 
+app.use(cors());
 app.get('/', function(req, res) {
     res.send("Page not found")
 });
