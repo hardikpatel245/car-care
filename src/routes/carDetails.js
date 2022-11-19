@@ -14,7 +14,7 @@ cardDetails.use(function(req, res, next) {
     }
 })
 
-cardDetails.get('/card_list', async function(req, res) {
+cardDetails.get('/car_list', async function(req, res) {
     const allData = await carModel.findAll();
     res.send(allData);
 });
