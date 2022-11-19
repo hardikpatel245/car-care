@@ -27,14 +27,11 @@ const User = sequelize.define('user', {
         // For uniquely identify user.
         primaryKey:true
     },
-    // Car id
-    carId: { type: Sequelize.INTEGER, allowNull:false},
-
-    // Model Id
-    modelId: { type: Sequelize.INTEGER, allowNull:false},
 
     // Column-2, name
-    name: { type: Sequelize.STRING, allowNull:false },
+    first_name: { type: Sequelize.STRING, allowNull:false },
+
+    last_name: { type: Sequelize.STRING, allowNull:false },
   
     // Column-3, email
     email: { type: Sequelize.STRING, allowNull:false },

@@ -3,14 +3,13 @@ const Joi = require('joi')
 //User-defined function to validate the user
 module.exports = validateUser = (user)=>  {
     const JoiSchema = Joi.object({
-      
-        carId: Joi.string()
-                  .required(),
-        name: Joi.string()
+        first_name: Joi.string()
                   .min(5)
                   .max(30)
-                  .required(),            
-        modelId: Joi.string()
+                  .required(),
+        last_name: Joi.string()
+                  .min(5)
+                  .max(30)
                   .required(),
         mobile: Joi.string()
                   .min(10)

@@ -15,11 +15,10 @@ auth.post('/register', async function(req, res) {
         const fetchUser = await userModel.findOne({where: { email: data.email, isAdmin: data.isAdmin}});
         if(fetchUser === null) {
             const insertQuery = await userModel.create({
-                "name": data.name,
+                "first_name": data.first_name,
+                "last_name": data.last_name,
                 "email": data.email,
                 "password": md5(data.password),
-                "carId": data.carId,
-                "modelId": data.modelId,
                 "mobile": data.mobile,
                 "isAdmin": data.isAdmin
             });
