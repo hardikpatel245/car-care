@@ -10,7 +10,7 @@ auth.post('/register', async function(req, res) {
     const data = req.body;
     const validate = validateUser(data);
     if(validate.error && validate.error.details) {
-        res.send(validate.error.details);
+        res.status(401).send(validate.error.details);
     } else {
         const fetchUser = await userModel.findOne({where: { email: data.email, isAdmin: data.isAdmin}});
         if(fetchUser === null) {
@@ -35,7 +35,7 @@ auth.post('/login', async function(req, res) {
     const data = req.body;
     const validate = loginUserValidation(data);
     if(validate.error && validate.error.details) {
-        res.send(validate.error.details);
+        res.status(401).send(validate.error.details);
     } else {
         const fetchUser = await userModel.findOne({where: { email: data.email, isAdmin: data.isAdmin}});
         if(fetchUser !== null) {
