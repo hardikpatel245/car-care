@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const validateUser = require('../validation/addUserValidation');
 const loginUserValidation = require('../validation/loginUserValidation');
 
-auth.post('/sign-up', async function(req, res) {
+auth.post('/register', async function(req, res) {
     const data = req.body;
     const validate = validateUser(data);
     if(validate.error && validate.error.details) {
@@ -31,7 +31,7 @@ auth.post('/sign-up', async function(req, res) {
 });
 
 
-auth.post('/sign-in', async function(req, res) {
+auth.post('/login', async function(req, res) {
     const data = req.body;
     const validate = loginUserValidation(data);
     if(validate.error && validate.error.details) {
