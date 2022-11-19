@@ -1,0 +1,28 @@
+curl --location --request GET 'http://localhost:3000/web/unAuthUser/token_generate'
+
+
+
+
+curl --location --request POST 'http://localhost:3000/web/user/add' \
+--header 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiRnJpIE5vdiAxOCAyMDIyIDE0OjM4OjMwIEdNVCswNTMwIChJbmRpYSBTdGFuZGFyZCBUaW1lKSIsInVzZXJJZCI6MTIsImlhdCI6MTY2ODc2MjUxMH0.8oNlBkvTDC6ArCSmaEPOOA7E8nrUd3KQEiqdik0UTwc' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Hardik1",
+    "email": "hardik1@gmail.com",
+    "myDate": "2022-11-17 "
+}'
+
+curl --location --request POST 'http://localhost:3000/web/user/all' \
+--header 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiRnJpIE5vdiAxOCAyMDIyIDE0OjM4OjMwIEdNVCswNTMwIChJbmRpYSBTdGFuZGFyZCBUaW1lKSIsInVzZXJJZCI6MTIsImlhdCI6MTY2ODc2MjUxMH0.8oNlBkvTDC6ArCSmaEPOOA7E8nrUd3KQEiqdik0UTwc' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Hardik1",
+    "email": "hardik1@gmail.com",
+    "myDate": "2022-11-17 "
+}'
+
+
+curl --location --request POST 'http://localhost:3000/web/user/upload_file' \
+--header 'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiRnJpIE5vdiAxOCAyMDIyIDE0OjM4OjMwIEdNVCswNTMwIChJbmRpYSBTdGFuZGFyZCBUaW1lKSIsInVzZXJJZCI6MTIsImlhdCI6MTY2ODc2MjUxMH0.8oNlBkvTDC6ArCSmaEPOOA7E8nrUd3KQEiqdik0UTwc' \
+--form 'uploaded_file=@"/C:/Users/LENOVO/Downloads/green_arrow.png"' \
+--form 'name="hardik"'
