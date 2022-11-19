@@ -17,9 +17,9 @@ sequelizeCar.sync();
 sequelizeModel.sync();
 
 app.use(bodyParser.json());
-const router = require('./src/routes/index');
+const router = require('./src/routes/user/user');
 const auth = require('./src/routes/auth/authentication');
-app.use('/web', router);
+app.use('/api/user', router);
 app.use('/api/auth', auth);
 
 app.listen(process.env.PORT, function() {
