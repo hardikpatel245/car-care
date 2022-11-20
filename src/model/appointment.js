@@ -11,7 +11,7 @@ const User = sequelize.define('appointment', {
     user_id: { type: Sequelize.INTEGER, allowNull:false },
     car_id: { type: Sequelize.INTEGER, allowNull:false },
     car_model: { type: Sequelize.INTEGER, allowNull:false },
-    service_type: { type: Sequelize.STRING, allowNull:false },
+    service_type: { type: Sequelize.STRING, allowNull:true },
     date: { type: Sequelize.STRING, allowNull:false },
     time: { type: Sequelize.STRING, allowNull:false },
     createdAt: Sequelize.DATE,
