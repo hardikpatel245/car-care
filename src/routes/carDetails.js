@@ -3,16 +3,7 @@ const cardDetails = express.Router();
 const carModel = require('../model/carModel');
 const modelModel = require('../model/modelModel');
 const modelListValidation = require('../validation/modelListValidation');
-const jwt = require('jsonwebtoken');
 
-cardDetails.use(function(req, res, next) {
-    try {
-        jwt.verify(req.headers['authorization'], process.env.JWT_ID);
-        next();
-    } catch(error) {
-        res.send("invalid token");
-    }
-})
 
 cardDetails.get('/car_list', async function(req, res) {
     const allData = await carModel.findAll();
