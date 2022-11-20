@@ -26,9 +26,9 @@ appointment.post('/add', async function(req, res) {
         const fetchUser = await appointmentModel.findOne({where: { date: data.date, time: data.time, car_model: data.car_model, car_id: data.car_id, user_id: userDetail.user_id}});
         if(fetchUser === null) {
             const insertQuery = await appointmentModel.create({user_id:userDetail.user_id, ...data});
-            res.status(200).send({data: insertQuery, message: "Appointment register successful"});
+            res.send({status: true, data: insertQuery, message: "Appointment register successful"});
         } else {
-            res.status(401).send({data: [], message: "Appointment already registered on this vehicle"});
+            res.send({status: false, data: [], message: "Appointment already registered on this vehicle"});
         }
     }
 });
