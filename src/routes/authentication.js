@@ -12,7 +12,7 @@ auth.post('/register', async function(req, res) {
     if(validate.error && validate.error.details) {
         res.status(401).send(validate.error.details);
     } else {
-        const fetchUser = await userModel.findOne({where: { email: data.email, isAdmin: data.isAdmin}});
+        const fetchUser = await userModel.findOne({where: { email: data.email}});
         if(fetchUser === null) {
             const insertQuery = await userModel.create({
                 "first_name": data.first_name,
@@ -36,7 +36,7 @@ auth.post('/login', async function(req, res) {
     if(validate.error && validate.error.details) {
         res.status(401).send(validate.error.details);
     } else {
-        const fetchUser = await userModel.findOne({where: { email: data.email, isAdmin: data.isAdmin}});
+        const fetchUser = await userModel.findOne({where: { email: data.email}});
         if(fetchUser !== null) {
             if(fetchUser.password === md5(data.password))  {
                 let data = {

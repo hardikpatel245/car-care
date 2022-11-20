@@ -12,8 +12,7 @@ module.exports = validateUser = (user)=>  {
                   .max(30)
                   .required(),
         service_type: Joi.string()
-                  .min(1)
-                  .required(),
+                  .optional(),
         date: Joi.string()
                 .min(1)
                 .required(),
